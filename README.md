@@ -9,7 +9,7 @@ Deletes tweets older than X number of days and skip pinned tweets.
 
 ## Usage
 **From the CLI**
-`python3 delete_tweets.py X` or `./delete_tweets.py X` (where is the number of days you want to skip)
+`python3 delete_tweets.py X` or `./delete_tweets.py X` (where **X** is the number of days you want to skip)
 - Delete tweets older than 7 days: `python3 delete_tweets.py 7`
 - Delete tweets older than 365 days: `python3 delete_tweets.py 365`
 
