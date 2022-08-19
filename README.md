@@ -24,6 +24,21 @@ Every day at 0100 - `0 1 * * * python3 /home/username/tools/tweet_cleaner/delete
 
 Deleted Tweet IDs will be appended to cron.log
 
+### Sample output
+```
+Searching for tweets older than 7
+  [+] Deleting 1556692985852530688
+  [+] Deleting 1556675626005712898
+  [+] Deleting 1556674409112281088
+  
+  <snip for brevity>
+  
+  [+] Deleting 1555535089043263490
+  [+] Deleting 1555505187011248128
+  [!] Skipping pinned tweet id 1526997212445564928
+  ---> Removed 40 tweets <---
+```
+
 ## Limitations
 Can only delete 50 tweets every 15 minutes due to API restrictions, but once you're down to a reasonable number it will keep up.
 
