@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import datetime
+import sys
 import time
 import tweepy
 import config
@@ -19,8 +20,8 @@ my_pinned_tweet = my_user_details.includes.get("tweets")[0].id
 
 # Date and time stuff
 right_now = time.time()
-older_than_x_days = 7
-my_end_date = right_now - older_than_x_days * 86400
+older_than_x_days = sys.argv[1]
+my_end_date = right_now - int(older_than_x_days) * 86400
 dt = datetime.datetime.fromtimestamp(my_end_date).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 # This is where the magic happens
