@@ -19,20 +19,23 @@ my_pinned_tweet = my_user_details.includes.get("tweets")[0].id
 
 # Date and time stuff
 right_now = time.time()
-older_than_x_days = 14
+older_than_x_days = 7
 my_end_date = right_now - older_than_x_days * 86400
 dt = datetime.datetime.fromtimestamp(my_end_date).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 # This is where the magic happens
 def main():
     old_tweets = client.get_users_tweets(my_user_id, end_time=dt, max_results=50, user_auth=True)
-
+    print(f"Searching for tweets older than {older_than_x_days}")
+    number_of_deleted = 0
     for item in old_tweets[0]:
         if item.id != my_pinned_tweet:
-            print(f"[+] Deleting {item.id}")
+            print(f"  [+] Deleting {item.id}")
             client.delete_tweet(item.id)
+            number_of_deleted += 1
         else:
-            print(f"[!] Skipping pinned tweet id {my_pinned_tweet}")
+            print(f"  [!] Skipping pinned tweet id {my_pinned_tweet}")
+    print(f"  ---> Removed {number_of_deleted} tweets <---\n")
 
 
 if __name__ == "__main__":
