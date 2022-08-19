@@ -27,7 +27,7 @@ dt = datetime.datetime.fromtimestamp(my_end_date).strftime("%Y-%m-%dT%H:%M:%SZ")
 # This is where the magic happens
 def main():
     old_tweets = client.get_users_tweets(my_user_id, end_time=dt, max_results=50, user_auth=True)
-    print(f"Searching for tweets older than {older_than_x_days}")
+    print(f"Searching for tweets older than {older_than_x_days} days")
     number_of_deleted = 0
     for item in old_tweets[0]:
         if item.id != my_pinned_tweet:
