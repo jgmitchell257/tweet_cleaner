@@ -26,7 +26,7 @@ Deleted Tweet IDs will be appended to cron.log
 
 ### Sample output
 ```
-Searching for tweets older than 7
+Searching for tweets older than 7 days
   [+] Deleting 1556692985852530688
   [+] Deleting 1556675626005712898
   [+] Deleting 1556674409112281088
