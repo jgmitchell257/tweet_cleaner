@@ -4,7 +4,7 @@ Deletes tweets older than X number of days and skip pinned tweets.
 ## Install
 1. Download files
 2. `poetry install`
-3. Create config.py file and put your Twitter API keys and secrets in it
+3. Rename config_sample.py to config.py and put your Twitter API keys and secrets in it
 4. `chmod u+x delete_tweets.py`
 
 ## Usage
