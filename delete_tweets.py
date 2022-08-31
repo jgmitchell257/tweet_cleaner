@@ -20,7 +20,10 @@ my_pinned_tweet = my_user_details.includes.get("tweets")[0].id
 
 # Date and time stuff
 right_now = time.time()
-older_than_x_days = sys.argv[1]
+if sys.argv[1]:
+    older_than_x_days = sys.argv[1]
+else:
+    older_than_x_days = 14
 my_end_date = right_now - int(older_than_x_days) * 86400
 dt = datetime.datetime.fromtimestamp(my_end_date).strftime("%Y-%m-%dT%H:%M:%SZ")
 
